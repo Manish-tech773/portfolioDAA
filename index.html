@@ -3,84 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f3f4f7, #eef1f5);
+            background-color: #e9ecef;
             color: #333;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Header Styling */
+        /* Header */
         header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            background-color: #0d6efd;
+            background: #343a40;
             color: #fff;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            padding: 3rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        /* Animated Background */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
-            transform: rotate(45deg);
-            animation: moveBackground 6s linear infinite;
-        }
-
-        /* Profile Image Styling */
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 3px solid #fff;
-            margin-top: 1rem;
             object-fit: cover;
-            animation: scaleIn 1.5s ease-in-out;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: 300;
         }
 
         /* Section Styling */
         section {
-            max-width: 1000px;
-            margin: 3rem auto;
+            max-width: 900px;
+            margin: 2rem auto;
             padding: 2rem;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: fadeInUp 1.5s ease-in-out forwards;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         section h2 {
             font-size: 2rem;
-            color: #0d6efd;
+            color: #343a40;
             margin-bottom: 1rem;
         }
 
@@ -91,71 +68,61 @@
 
         section ul li {
             font-size: 1.1rem;
+            color: #555;
             margin-bottom: 1rem;
-            padding-left: 1.5rem;
+            padding-left: 20px;
             position: relative;
         }
 
-        section ul li::before {
-            content: '\2022';
-            color: #0d6efd;
+        section ul li:before {
+            content: "\2022";
             position: absolute;
             left: 0;
-            font-size: 1.5rem;
+            color: #343a40;
         }
 
         section a {
-            color: #0d6efd;
+            color: #343a40;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
         }
 
         section a:hover {
-            color: #0a58ca;
+            text-decoration: underline;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Portfolio Details */
+        dl {
+            margin-top: 1rem;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        dl dt {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        @keyframes moveBackground {
-            from {
-                transform: translateX(0) rotate(45deg);
-            }
-            to {
-                transform: translateX(-50%) rotate(45deg);
-            }
+        dl dd {
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: #666;
         }
 
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+        /* Blockquote */
+        blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            background-color: #f8f9fa;
+            border-left: 4px solid #343a40;
+            padding: 15px;
+            margin-top: 2rem;
+            color: #444;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             section h2 {
@@ -165,28 +132,32 @@
             section ul li {
                 font-size: 1rem;
             }
+
+            section dl dd {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="your-image.jpg" alt="Profile Image" class="profile-img"> <!-- Replace with your image -->
-        <h1>Hello, I'm [Your Name]</h1>
-        <p>Welcome to my portfolio! Explore my projects, skills, and journey below.</p>
+        <img src="your-image.jpg" alt="Profile Image" class="profile-img"> <!-- Add your image here -->
+        <h1>Welcome to [Your Name]'s Portfolio</h1>
+        <p>Discover my projects, skills, and experiences below.</p>
     </header>
 
     <section>
         <h2>Projects</h2>
         <ul>
-            <li><strong>Project 1:</strong> Description of an amazing project.</li>
-            <li><strong>Project 2:</strong> Another impactful project description.</li>
+            <li><strong>Project 1:</strong> Description of your first project.</li>
+            <li><strong>Project 2:</strong> Description of your second project.</li>
         </ul>
 
         <h2>Skills</h2>
         <ul>
-            <li>Programming Languages: C++, Python, JavaScript</li>
-            <li>Frameworks: React.js, Node.js</li>
-            <li>Other Skills: Problem Solving, Team Collaboration</li>
+            <li>Languages: Python, JavaScript, C++</li>
+            <li>Frameworks: React.js, Express.js</li>
+            <li>Tools: Git, Docker</li>
         </ul>
 
         <h2>Find Me Online</h2>
@@ -194,6 +165,32 @@
             <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
             <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
         </ul>
+
+        <h2>Portfolio Details</h2>
+        <dl>
+            <dt>Course Name</dt>
+            <dd>Web Development Essentials</dd>
+
+            <dt>Course Code</dt>
+            <dd>WD101</dd>
+
+            <dt>Name</dt>
+            <dd>Your Name</dd>
+
+            <dt>SRN</dt>
+            <dd>Your SRN</dd>
+
+            <dt>Course Instructor</dt>
+            <dd>Instructor Name</dd>
+
+            <dt>University</dt>
+            <dd>Your University</dd>
+
+            <dt>Portfolio Topic/Domain</dt>
+            <dd>Frontend Development</dd>
+        </dl>
+
+        <blockquote>“Success is not the key to happiness. Happiness is the key to success.”</blockquote>
     </section>
 </body>
 </html>
