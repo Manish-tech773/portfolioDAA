@@ -3,51 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Animated Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7fb;
+            background: linear-gradient(135deg, #f3f4f7, #eef1f5);
             color: #333;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* Header Styling */
         header {
-            background: #0078D7;
-            color: #fff;
-            text-align: left;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-        }
-
-        /* Circular Image Styling */
-        .profile-img {
-            width: 200px;  /* Increased size to make the image larger */
-            height: 200px; /* Increased height to match the width */
-            border-radius: 50%; /* This keeps the image circular */
-            border: 4px solid #fff; /* White border for contrast */
-            object-fit: cover; /* Ensures the image fits well in the circle */
-            margin-right: 2rem; /* Space between the image and text */
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #0d6efd;
+            color: #fff;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
-            text-transform: uppercase;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         header p {
             font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 300;
+            margin-top: 1rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animated Background */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: moveBackground 6s linear infinite;
+        }
+
+        /* Profile Image Styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-top: 1rem;
+            object-fit: cover;
+            animation: scaleIn 1.5s ease-in-out;
         }
 
         /* Section Styling */
@@ -58,73 +74,82 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out forwards;
         }
 
         section h2 {
-            font-size: 2.5rem;
-            color: #0078D7;
+            font-size: 2rem;
+            color: #0d6efd;
             margin-bottom: 1rem;
-            text-align: center;
         }
 
         section ul {
             list-style-type: none;
             padding: 0;
-            margin-top: 1rem;
         }
 
         section ul li {
             font-size: 1.1rem;
-            color: #555;
             margin-bottom: 1rem;
-            padding-left: 20px;
+            padding-left: 1.5rem;
             position: relative;
         }
 
-        section ul li:before {
-            content: "•";
+        section ul li::before {
+            content: '\2022';
+            color: #0d6efd;
             position: absolute;
             left: 0;
-            color: #0078D7;
+            font-size: 1.5rem;
         }
 
         section a {
-            color: #0078D7;
+            color: #0d6efd;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
 
         section a:hover {
-            text-decoration: underline;
+            color: #0a58ca;
         }
 
-        /* Portfolio Details */
-        dl {
-            margin-top: 1rem;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        dl dt {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        dl dd {
-            margin-bottom: 16px;
-            font-size: 1rem;
-            color: #666;
+        @keyframes moveBackground {
+            from {
+                transform: translateX(0) rotate(45deg);
+            }
+            to {
+                transform: translateX(-50%) rotate(45deg);
+            }
         }
 
-        /* Blockquote */
-        blockquote {
-            font-size: 1.2rem;
-            font-style: italic;
-            background-color: #f9f9f9;
-            border-left: 4px solid #0078D7;
-            padding: 15px;
-            margin-top: 2rem;
-            color: #444;
-            text-align: center;
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Responsive Design */
@@ -134,83 +159,41 @@
             }
 
             section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             section ul li {
                 font-size: 1rem;
-            }
-
-            section dl dd {
-                font-size: 0.9rem;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-img {
-                margin-right: 0;
-                margin-bottom: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="your-image.jpg" alt="Profile Image" class="profile-img"> <!-- Add your image here -->
-        <div>
-            <h1>Hello, I'm [Your Name] 👋</h1>
-            <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
-        </div>
+        <img src="your-image.jpg" alt="Profile Image" class="profile-img"> <!-- Replace with your image -->
+        <h1>Hello, I'm [Your Name]</h1>
+        <p>Welcome to my portfolio! Explore my projects, skills, and journey below.</p>
     </header>
 
     <section>
-        <h2>🛠 Projects</h2>
+        <h2>Projects</h2>
         <ul>
-            <li><strong>Project 1</strong>: A short description of your project1.</li>
-            <li><strong>Project 2</strong>: A short description of another project2.</li>
+            <li><strong>Project 1:</strong> Description of an amazing project.</li>
+            <li><strong>Project 2:</strong> Another impactful project description.</li>
         </ul>
 
-        <h2>🚀 Skills</h2>
+        <h2>Skills</h2>
         <ul>
-            <li>C++, Python, JavaScript</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Web Development (React.js, Node.js)</li>
+            <li>Programming Languages: C++, Python, JavaScript</li>
+            <li>Frameworks: React.js, Node.js</li>
+            <li>Other Skills: Problem Solving, Team Collaboration</li>
         </ul>
 
-        <h2>🌐 Find Me Online</h2>
+        <h2>Find Me Online</h2>
         <ul>
             <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
             <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
         </ul>
-
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Algorithmic Problem Solving</dd>
-
-            <dt>Course Code</dt>
-            <dd>Course Code Placeholder</dd>
-
-            <dt>Name</dt>
-            <dd>Your Name</dd>
-
-            <dt>SRN</dt>
-            <dd>Your SRN</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name Placeholder</dd>
-
-            <dt>University</dt>
-            <dd>Your University Name</dd>
-
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
-
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
 </body>
 </html>
