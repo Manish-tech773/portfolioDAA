@@ -3,194 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e9ecef;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Header Styling */
         header {
-            background: #343a40;
+            background: linear-gradient(to bottom, #0078D7, #0056b3);
             color: #fff;
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 3rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #fff;
-            object-fit: cover;
-            margin-bottom: 1rem;
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg') repeat-x;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         header p {
             font-size: 1.2rem;
-            margin-top: 10px;
+            margin: 0.5rem 0 0;
             font-weight: 300;
         }
 
         /* Section Styling */
         section {
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: 3rem auto;
             padding: 2rem;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         section h2 {
-            font-size: 2rem;
-            color: #343a40;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: #0078D7;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         section ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
         }
 
         section ul li {
+            background: #f4f7fb;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            flex: 1 1 calc(45% - 1rem);
+            text-align: center;
             font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1rem;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        section ul li:before {
-            content: "\2022";
-            position: absolute;
-            left: 0;
-            color: #343a40;
-        }
-
-        section a {
-            color: #343a40;
-            text-decoration: none;
             font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        section a:hover {
-            text-decoration: underline;
+        section ul li:hover {
+            transform: scale(1.05);
+            background: #e0eafc;
+        }
+
+        section ul li a {
+            color: #0078D7;
+            text-decoration: none;
         }
 
         /* Portfolio Details */
         dl {
-            margin-top: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f4f7fb;
+            border-radius: 8px;
         }
 
         dl dt {
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: #0056b3;
         }
 
         dl dd {
-            margin-bottom: 16px;
+            margin: 0.5rem 0 1rem;
             font-size: 1rem;
-            color: #666;
+            color: #555;
         }
 
-        /* Blockquote */
-        blockquote {
-            font-size: 1.2rem;
-            font-style: italic;
-            background-color: #f8f9fa;
-            border-left: 4px solid #343a40;
-            padding: 15px;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #0078D7;
+            color: #fff;
             margin-top: 2rem;
-            color: #444;
+        }
+
+        footer a {
+            color: #ffea00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            section ul li {
+                flex: 1 1 100%;
+            }
+
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             section h2 {
-                font-size: 1.8rem;
-            }
-
-            section ul li {
-                font-size: 1rem;
-            }
-
-            section dl dd {
-                font-size: 0.9rem;
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="your-image.jpg" alt="Profile Image" class="profile-img"> <!-- Add your image here -->
-        <h1>Welcome to [Your Name]'s Portfolio</h1>
-        <p>Discover my projects, skills, and experiences below.</p>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Showcasing my skills, projects, and achievements</p>
+        <div class="wave"></div>
     </header>
 
     <section>
-        <h2>Projects</h2>
+        <h2>🔧 Projects</h2>
         <ul>
-            <li><strong>Project 1:</strong> Description of your first project.</li>
-            <li><strong>Project 2:</strong> Description of your second project.</li>
+            <li><a href="#">Project 1: Weather App</a></li>
+            <li><a href="#">Project 2: Personal Blog</a></li>
+            <li><a href="#">Project 3: E-commerce Website</a></li>
+            <li><a href="#">Project 4: Portfolio Website</a></li>
         </ul>
-
-        <h2>Skills</h2>
-        <ul>
-            <li>Languages: Python, JavaScript, C++</li>
-            <li>Frameworks: React.js, Express.js</li>
-            <li>Tools: Git, Docker</li>
-        </ul>
-
-        <h2>Find Me Online</h2>
-        <ul>
-            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
-        </ul>
-
-        <h2>Portfolio Details</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Web Development Essentials</dd>
-
-            <dt>Course Code</dt>
-            <dd>WD101</dd>
-
-            <dt>Name</dt>
-            <dd>Your Name</dd>
-
-            <dt>SRN</dt>
-            <dd>Your SRN</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name</dd>
-
-            <dt>University</dt>
-            <dd>Your University</dd>
-
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Frontend Development</dd>
-        </dl>
-
-        <blockquote>“Success is not the key to happiness. Happiness is the key to success.”</blockquote>
     </section>
+
+    <section>
+        <h2>💻 Skills</h2>
+        <ul>
+            <li>Programming: Python, JavaScript, Java</li>
+            <li>Frameworks: React, Node.js</li>
+            <li>Tools: Git, Docker</li>
+            <li>Problem Solving & Algorithms</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📋 Portfolio Details</h2>
+        <dl>
+            <dt>Course Name:</dt>
+            <dd>Algorithm Design</dd>
+            <dt>Instructor:</dt>
+            <dd>Dr. Jane Doe</dd>
+            <dt>University:</dt>
+            <dd>Tech University</dd>
+        </dl>
+    </section>
+
+    <footer>
+        <p>© 2024 Your Name | Find me on <a href="#">GitHub</a> & <a href="#">LinkedIn</a></p>
+    </footer>
 </body>
 </html>
