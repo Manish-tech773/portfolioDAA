@@ -1,148 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>VINAYSWARUP C N - Portfolio</title>
+    <!-- Adding Google Fonts for elegant fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Base styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 100vh;
         }
 
         header {
-            margin-bottom: 20px;
+            background-color: #3F51B5;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 1.5rem;
+            margin-top: 0;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            object-fit: cover;
+            margin-top: 20px;
         }
 
         section {
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 5rem auto;
+            max-width: 1000px;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 {
-            font-size: 1.8rem;
-            margin: 20px 0;
-            color: #444;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #3F51B5;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
         }
 
-        ul li {
-            margin: 10px 0;
-            font-size: 1rem;
+        li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-weight: 400;
         }
 
-        dl {
-            margin: 20px 0;
-            text-align: left;
-        }
-
-        dl dt {
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        dl dd {
-            margin: 0 0 10px 0;
-        }
-
-        a {
-            color: #007BFF;
+        li a {
+            color: #3F51B5;
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        a:hover {
-            color: #0056b3;
+        li a:hover {
+            color: #1A237E;
+            text-decoration: underline;
         }
 
         blockquote {
-            margin: 30px 0;
+            font-size: 1.3rem;
             font-style: italic;
-            color: #777;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 6px solid #3F51B5;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            header p {
+                font-size: 1.4rem;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            ul li {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Hello, I'm [Your Name] 👋</h1>
-        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+        <h1>VINAYSWARUP C N</h1>
+        <p>Welcome to my portfolio! I am a passionate problem solver and tech enthusiast.</p>
+        <img class="profile-img" src="C:/Users/vcngo/Downloads/VINAY.jpg" alt="Vinay Swaroop C N">
     </header>
 
     <section>
-        <h2>🚠 Projects</h2>
+        <h2>🛠 Projects</h2>
         <ul>
-            <li><strong>Project 1</strong>: A short description of your project1.</li>
-            <li><strong>Project 2</strong>: A short description of another project2.</li>
+            <li>
+                <strong>Project 1:</strong> Smart City - Chandigarh is an eco-friendly urban model, fulfilling human needs within 1500 sq km using smart technologies, renewable energy, efficient resource management, and sustainable infrastructure for livability and scalability.
+            </li>
         </ul>
 
         <h2>🚀 Skills</h2>
         <ul>
-            <li>C++, Python, JavaScript</li>
+            <li>C++, C</li>
             <li>Data Structures and Algorithms</li>
-            <li>Web Development (React.js, Node.js)</li>
+            <li>Google Site Development (GitHub)</li>
         </ul>
 
         <h2>🌐 Find Me Online</h2>
         <ul>
-            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/Vinayswarup2912" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/vinayswarup-c-nissimagoudar-8aa785340/" target="_blank">LinkedIn</a></li>
         </ul>
 
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Algorithmic Problem Solving</dd>
+        <h2>Portfolio Details</h2>
+        <ul>
+            <li><strong>Course Name:</strong> Design Analysis and Algorithms</li>
+            <li><strong>Course Code:</strong> 24ECSC205</li>
+            <li><strong>Name:</strong> VINAYSWARUP C N</li>
+            <li><strong>USN:</strong> 01FE23BCS051</li>
+            <li><strong>Course Instructor:</strong> Arundati Aralimatti</li>
+            <li><strong>University:</strong> K.L.E University</li>
+            <li><strong>Portfolio Topic/Domain:</strong> Smart City Design Proposed City: SOLIVITA CITY</li>
+        </ul>
 
-            <dt>Course Code</dt>
-            <dd>Course Code Placeholder</dd>
-
-            <dt>Name</dt>
-            <dd>Your Name</dd>
-
-            <dt>SRN</dt>
-            <dd>Your SRN</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name Placeholder</dd>
-
-            <dt>University</dt>
-            <dd>Your University Name</dd>
-
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
-
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+        <blockquote>
+            “Engineers: Turning coffee into code, dreams into designs, and ideas into innovations that shape the world." – Anonymous
+        </blockquote>
     </section>
 </body>
+
 </html>
